@@ -26,7 +26,12 @@ A collection of AI-assisted workflows, skills, prompts, and playbooks for commer
 │   ├── promissory-notes/
 │   ├── alr/                    #   Assignment of Leases and Rents
 │   └── guaranty/
-├── document-assembly/          # Improving the OB document assembly workflow
+├── document-assembly/          # Automated loan document generation from CAS
+│   ├── scripts/                #   Jinja converter, generation engine, single-doc reference
+│   ├── skills/                 #   CAS extraction guide, annotation spec, commitment letter skill
+│   ├── jinja_templates/        #   (empty) User provides Jinja-templated .docx files
+│   ├── templates/              #   (empty) Converted maximum templates
+│   └── output/                 #   (empty) Generated deal documents
 ├── procedures/                 # Workflow and procedures manuals
 └── opinion-letters/            # Opinion letter generation and review workflows
     ├── opinion-generation/     #   Drafting third-party opinion letters (H&K form, Florida practice)
@@ -52,6 +57,15 @@ A collection of AI-assisted workflows, skills, prompts, and playbooks for commer
 | Construction Loan Cheat Sheet | `playbooks/construction-loan-agreements/` | Negotiation guide covering 14 key provisions of construction loan agreements for residential condo projects (FL-focused). Includes lender, borrower, and market benchmark positions. |
 | Mezzanine Loans & Equity Pledges | `playbooks/mezzanine-loans-equity-pledges/` | Comprehensive knowledge base covering mezzanine loan structure, pledge and security agreements, intercreditor agreements, UCC collateral documents, foreclosure remedies, and due diligence/closing checklists. |
 
+### Document Assembly
+
+| Resource | Location | Description |
+|----------|----------|-------------|
+| Jinja-to-Maximum Converter | `document-assembly/scripts/jinja_to_max_template.py` | Converts Jinja-templated `.docx` files into maximum templates with bracketed placeholders (`[FIELD]`) and conditional markers (`[IF: LABEL]`). 170+ variable mappings, 200+ condition labels, batch mode. |
+| Document Generation Engine | `document-assembly/scripts/generate_documents.py` | Batch engine that reads maximum templates and CAS-extracted parameters, resolves conditionals, replaces placeholders, and outputs `.docx` files with tracked changes and Word comments. Includes working example deal configuration. |
+| CAS Extraction Guide | `document-assembly/skills/cas_extraction_guide.md` | Reference for extracting deal parameters from a Credit Approval Summary. Field mappings, document selection rules, and parameter dictionary structure. |
+| Annotation Format Spec | `document-assembly/skills/annotation_format_spec.md` | Format specification for writing annotated template skills (per-document operation guides). |
+
 ### Opinion Letters
 
 | Resource | Location | Description |
@@ -73,8 +87,8 @@ Using Claude Code to draft and revise loan documents, with reusable skills and p
 ### 4. OB Loan Document Playbooks
 Issue-spotting and negotiation reference guides for each major loan document type in the OB lending practice.
 
-### 5. Document Assembly Improvements
-Streamlining the OB document assembly pipeline — templates, automation, and quality checks.
+### 5. Document Assembly
+Automated loan document generation from Credit Approval Summaries. Includes a Jinja-to-maximum-template converter, a batch generation engine that produces attorney-ready drafts with tracked changes and Word comments, and reference skills for CAS extraction and template annotation. Provide your own Jinja templates to replicate the workflow.
 
 ### 6. Workflow & Procedures Manuals
 Standard operating procedures for recurring practice tasks.
