@@ -1,4 +1,4 @@
-# Ocean Bank — CAS Extraction Guide
+# Bank — CAS Extraction Guide
 
 ## Purpose
 
@@ -8,7 +8,7 @@ This guide standardizes how deal parameters are extracted from any Credit Approv
 
 ## 1. CAS Structure Map
 
-A typical Ocean Bank CAS has this layout (may vary by RM and deal type):
+A typical Bank CAS has this layout (may vary by RM and deal type):
 
 ### Page 1: Header / Summary
 - **Borrower Name(s)** — top of page, sometimes in header

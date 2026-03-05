@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate a full set of Ocean Bank loan documents from maximum templates.
+Generate a full set of Bank loan documents from maximum templates.
 Graham Companies deal — $28,000,000 Refinance of portfolio from BankUnited.
 
 This script:
@@ -1077,7 +1077,7 @@ def add_comment_ref_to_paragraph(para, comment_id):
 def process_document(template_path, output_path, placeholder_values, condition_keeps,
                      for_each_collections, comments_to_add):
     """Process a single template into an output document with tracked changes."""
-    doc_name = os.path.basename(template_path).replace("Ocean Bank - ", "")
+    doc_name = os.path.basename(template_path).replace("Bank - ", "")
     print(f"\n{'='*60}")
     print(f"Generating: {doc_name}")
     print(f"{'='*60}")
@@ -1384,7 +1384,7 @@ def process_document(template_path, output_path, placeholder_values, condition_k
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate Ocean Bank loan documents from CAS")
+    parser = argparse.ArgumentParser(description="Generate Bank loan documents from CAS")
     parser.add_argument("--template-dir", default="new_templates",
                         help="Directory containing maximum templates")
     parser.add_argument("--output-dir", default="output",
@@ -1422,7 +1422,7 @@ def main():
     # Generate each document
     results = []
     for doc_name in selected:
-        template_file = f"Ocean Bank - {doc_name}.docx"
+        template_file = f"Bank - {doc_name}.docx"
         template_path = os.path.join(args.template_dir, template_file)
         output_file = f"{args.deal_name} - {doc_name}.docx"
         output_path = os.path.join(args.output_dir, output_file)

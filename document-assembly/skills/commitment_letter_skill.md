@@ -1,7 +1,7 @@
 # Commitment Letter — Annotated Template Skill
 
 ## Document Metadata
-- **Template:** `new_templates/Ocean Bank - Commitment Letter.docx`
+- **Template:** `new_templates/Bank - Commitment Letter.docx`
 - **When to Generate:** Every deal (all loan types)
 - **Generated Per:** Once per deal
 - **Dependencies:** None — this is the master document that establishes deal terms
@@ -475,7 +475,7 @@ Edge cases that mechanical placeholder replacement and conditional deletion cann
 These rules are absolute constraints on the AI's behavior when editing the template.
 
 ### Rule 1: Never Rewrite Template Language
-The template text IS the Ocean Bank form. The words, phrases, and legal provisions are approved language. Only replace placeholders and delete conditional sections. Never paraphrase, rephrase, or rewrite any template text.
+The template text IS the Bank form. The words, phrases, and legal provisions are approved language. Only replace placeholders and delete conditional sections. Never paraphrase, rephrase, or rewrite any template text.
 
 ### Rule 2: Never Paraphrase
 If a section applies to the deal, keep it verbatim. If it doesn't apply, delete the entire conditional block. There is no middle ground — never "adjust" template language to better fit the deal.

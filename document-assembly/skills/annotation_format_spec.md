@@ -1,8 +1,8 @@
-# Ocean Bank — Annotated Template Skill Format Specification
+# Bank — Annotated Template Skill Format Specification
 
 ## Purpose
 
-This document defines the standard format for annotated template "skills" used in AI-guided generation of Ocean Bank loan documents. Each skill prescribes exact surgical operations the AI performs on a maximum Word template: replacing bracketed placeholders with CAS-extracted values, deleting inapplicable conditional sections, and flagging edge cases with Word comments.
+This document defines the standard format for annotated template "skills" used in AI-guided generation of Bank loan documents. Each skill prescribes exact surgical operations the AI performs on a maximum Word template: replacing bracketed placeholders with CAS-extracted values, deleting inapplicable conditional sections, and flagging edge cases with Word comments.
 
 **Key principle:** The AI performs three operations and ONLY three operations:
 1. **Replace** `[PLACEHOLDER]` with extracted value (tracked change: del + ins)

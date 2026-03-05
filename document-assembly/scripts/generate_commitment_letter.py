@@ -513,7 +513,7 @@ COMMENTS_TO_ADD = [
     },
     {
         "target_text": "Deposit Accounts",
-        "comment": "REVIEW: Operating account requirement waived per CAS — subject to Borrower maintaining a meaningful banking relationship at Ocean Bank. Confirm waiver language is acceptable.",
+        "comment": "REVIEW: Operating account requirement waived per CAS — subject to Borrower maintaining a meaningful banking relationship at Bank. Confirm waiver language is acceptable.",
         "first_only": True,
     },
     {
@@ -1283,6 +1283,6 @@ def process_document(template_path, output_path):
 
 
 if __name__ == "__main__":
-    template_path = "new_templates/Ocean Bank - Commitment Letter.docx"
+    template_path = "new_templates/Bank - Commitment Letter.docx"
     output_path = "output/Graham Companies - Commitment Letter.docx"
     process_document(template_path, output_path)

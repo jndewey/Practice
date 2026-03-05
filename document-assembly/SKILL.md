@@ -1,14 +1,14 @@
 ---
 name: ocean-bank-deal-docs
 description: >
-  Generate Ocean Bank commercial real estate loan documents from a Credit Approval Summary (CAS).
+  Generate Bank commercial real estate loan documents from a Credit Approval Summary (CAS).
   Use this skill whenever the user asks to generate, draft, or produce loan documents, commitment letters,
-  promissory notes, mortgages, or any Ocean Bank closing documents from a CAS. Also trigger when the user
-  references a CAS file, asks to "run" a deal, or mentions Ocean Bank document automation. This skill
+  promissory notes, mortgages, or any Bank closing documents from a CAS. Also trigger when the user
+  references a CAS file, asks to "run" a deal, or mentions Bank document automation. This skill
   edits Word templates via tracked changes — it does NOT generate documents from scratch.
 ---
 
-# Ocean Bank Deal Document Generator
+# Bank Deal Document Generator
 
 ## Overview
 
@@ -25,7 +25,7 @@ tracked-changes review.
 
 **These rules are absolute constraints. They override all other guidance.**
 
-1. **Never rewrite template language.** The template text IS the Ocean Bank form. Only replace placeholders and delete conditional sections.
+1. **Never rewrite template language.** The template text IS the Bank form. Only replace placeholders and delete conditional sections.
 2. **Never paraphrase.** If a section applies, keep it verbatim. If it doesn't, delete it entirely.
 3. **Preserve surrounding text.** When replacing a placeholder, the words before and after remain untouched.
 4. **When in doubt, flag it.** Add a `[REVIEW]` Word comment rather than rewriting. A comment costs 5 seconds; a wrong provision costs hours.
@@ -59,7 +59,7 @@ Output: Edited .docx with tracked changes + comments
 
 ### Three artifacts per document type:
 
-1. **Maximum Word Template** — The Ocean Bank form with ALL conditional sections present.
+1. **Maximum Word Template** — The Bank form with ALL conditional sections present.
    Uses bracketed placeholders (`[BORROWER NAME]`, `[$LOAN AMOUNT]`) and conditional
    markers (`[IF: NEW LOAN]`...`[END IF: NEW LOAN]`). Located in `new_templates/`.
 
@@ -83,9 +83,9 @@ docauto/
 ├── SKILL.md                          ← this file (master skill)
 ├── CAS.pdf                           ← sample CAS input
 ├── jinja_templates/                  ← 24 original Jinja templates (reference only)
-│   └── Ocean Bank - Commitment Letter.docx
+│   └── Bank - Commitment Letter.docx
 ├── new_templates/                    ← clean maximum templates
-│   └── Ocean Bank - Commitment Letter.docx
+│   └── Bank - Commitment Letter.docx
 ├── skills/
 │   ├── commitment_letter_skill.md    ← annotated template skill
 │   ├── cas_extraction_guide.md       ← shared CAS extraction reference
@@ -464,10 +464,10 @@ AI workflow:
 ## Important Reminders
 
 - **Three operations only.** Replace placeholders, delete conditional blocks, flag edge cases. Nothing else.
-- **Never rewrite template language.** The template text IS the Ocean Bank form. Don't paraphrase, rephrase,
+- **Never rewrite template language.** The template text IS the Bank form. Don't paraphrase, rephrase,
   or adjust any provision. If it applies, keep it verbatim. If it doesn't, delete it entirely.
 - **Never generate from scratch.** Always edit the template. The template's formatting, spacing, and style
-  are what make it an Ocean Bank document.
+  are what make it an Bank document.
 - **Work incrementally.** Edit one section, verify, move to next. Don't try to edit the entire document
   in a single pass.
 - **Preserve all formatting.** Copy `<w:rPr>` blocks. Match fonts, sizes, alignment.
